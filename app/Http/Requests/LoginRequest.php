@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreBeritaRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,8 @@ class StoreBeritaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'username' => 'required|min:3',
+            'password' => 'required|min:3',
         ];
     }
 }

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Citraan;
 use App\Http\Requests\StoreCitraanRequest;
 use App\Http\Requests\UpdateCitraanRequest;
@@ -15,7 +16,6 @@ class CitraanController extends Controller
     {
         //
     }
-
 
     /**
      * Store a newly created resource in storage.
