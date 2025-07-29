@@ -1,51 +1,41 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Models\faq;
+use App\Http\Requests\StoreFaqRequest;
+use App\Http\Requests\UpdateFaqRequest;
+use App\Http\Controllers\Controller;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        return response()->json(Faq::all(), 200);
+    }
+
+    public function store(StoreFaqRequest $request)
+    {
+        if (Faq::count() >= 10) {
+            return response()->json(['message' => 'Maksimal 10 Isu yang diperbolehkan.'], 400);
+        }
+
+        $faq = Faq::create($request->validated());
+        return response()->json($faq, 201);
     }
 
 
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function update(UpdateFaqRequest $request, Faq $faq)
     {
-        //
+        $faq->update($request->validated());
+        return response()->json($faq);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(faq $faq)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, faq $faq)
+    public function destroy(Faq $faq)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(faq $faq)
-    {
-        //
+        $faq->delete();
+        return response()->json(['message' => 'Isu berhasil dihapus.']);
     }
 }
