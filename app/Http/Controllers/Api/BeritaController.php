@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Berita;
 use App\Http\Requests\StoreBeritaRequest;
 use App\Http\Requests\UpdateBeritaRequest;
@@ -15,8 +16,6 @@ class BeritaController extends Controller
     {
         //
     }
-
-
 
     /**
      * Store a newly created resource in storage.

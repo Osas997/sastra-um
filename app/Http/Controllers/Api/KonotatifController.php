@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Konotatif;
 use App\Http\Requests\StoreKonotatifRequest;
 use App\Http\Requests\UpdateKonotatifRequest;
