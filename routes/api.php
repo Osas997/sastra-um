@@ -1,6 +1,6 @@
 <?php
 
-use App\Helper\ApiResponse;
+use App\Helpers\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
