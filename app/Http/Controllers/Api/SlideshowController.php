@@ -16,7 +16,7 @@ class SlideshowController extends Controller
     public function index()
     {
          $data = Slideshow::all();
-         return response()->json($data);
+         return response()->json(['data' => $data]);
     }
 
     public function store(StoreSlideshowRequest $request)
@@ -41,10 +41,7 @@ class SlideshowController extends Controller
     }
     public function update(UpdateSlideshowRequest $request)
     {
-        Log::info('STARTING SLIDE UPDATE');
-
         foreach ($request->slides as $index => $slideData) {
-            Log::info("PROCESSING SLIDE INDEX $index", $slideData);
 
             $slideshow = Slideshow::find($slideData['id']);
             if (!$slideshow) {
@@ -57,20 +54,15 @@ class SlideshowController extends Controller
             }
 
             if (isset($slideData['files']) && $slideData['files'] instanceof \Illuminate\Http\UploadedFile) {
-                Log::info("Handling file upload for slide ID: {$slideData['id']}");
 
-                // Hapus file lama
                 if ($slideshow->files && Storage::disk('public')->exists($slideshow->files)) {
                     Storage::disk('public')->delete($slideshow->files);
                 }
 
-                // Simpan file baru
                 $path = $slideData['files']->store('slides', 'public');
                 $slideshow->files = $path;
             }
-
             $slideshow->save();
-            Log::info("Slide {$slideData['id']} updated");
         }
 
         return response()->json([
