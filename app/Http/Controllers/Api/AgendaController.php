@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\ApiResponse;
 use App\Http\Controllers\Controller;
 use App\Models\Agenda;
 use App\Http\Requests\StoreAgendaRequest;
 use App\Http\Requests\UpdateAgendaRequest;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class AgendaController extends Controller
 {
-    protected function responseWithData($data, $status = 200)
-    {
-        return response()->json(['data' => $data], $status);
-    }
-
     public function index(Request $request)
     {
         $query = Agenda::query();
@@ -23,7 +21,7 @@ class AgendaController extends Controller
             $query->where('judul', 'like', '%' . $request->search . '%');
         }
 
-        return $this->responseWithData($query->latest()->get());
+        return ApiResponse::responseWithData($query->latest()->get(), 'Success get all agenda');
     }
 
     public function show($id)
@@ -34,7 +32,7 @@ class AgendaController extends Controller
             return response()->json(['message' => 'Agenda tidak ditemukan'], 404);
         }
 
-        return $this->responseWithData($agenda);
+        return ApiResponse::responseWithData($agenda, 'Success get agenda');
     }
 
     public function store(StoreAgendaRequest $request)
@@ -42,7 +40,7 @@ class AgendaController extends Controller
         $data = $request->validated();
         $agenda = Agenda::create($data);
 
-        return $this->responseWithData($agenda, 201);
+        return ApiResponse::responseWithData($agenda, 'Success create agenda', Response::HTTP_CREATED);
     }
 
     public function update(UpdateAgendaRequest $request, $id)
@@ -50,12 +48,12 @@ class AgendaController extends Controller
         $agenda = Agenda::find($id);
 
         if (!$agenda) {
-            return response()->json(['message' => 'Agenda tidak ditemukan'], 404);
+            throw new NotFoundHttpException('Agenda tidak ditemukan');
         }
 
         $agenda->update($request->validated());
 
-        return $this->responseWithData($agenda);
+        return ApiResponse::responseWithData($agenda, 'Success update agenda');
     }
 
     public function destroy($id)
@@ -63,11 +61,11 @@ class AgendaController extends Controller
         $agenda = Agenda::find($id);
 
         if (!$agenda) {
-            return response()->json(['message' => 'Agenda tidak ditemukan'], 404);
+            throw new NotFoundHttpException('Agenda tidak ditemukan');
         }
 
         $agenda->delete();
 
-        return response()->json(['message' => 'Agenda berhasil dihapus']);
+        return ApiResponse::response('Success delete agenda');
     }
 }
