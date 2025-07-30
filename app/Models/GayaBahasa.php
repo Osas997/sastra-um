@@ -9,7 +9,7 @@ class GayaBahasa extends Model
 {
     /** @use HasFactory<\Database\Factories\GayaBahasaFactory> */
     use HasFactory;
-    protected $table = 'gaya_bahasa';
+    protected $table = 'gaya_bahasas';
     protected $fillable = [
         'contoh_kalimat',
         'frasa_kunci',

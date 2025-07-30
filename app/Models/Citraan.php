@@ -9,7 +9,7 @@ class Citraan extends Model
 {
     /** @use HasFactory<\Database\Factories\CitraanFactory> */
     use HasFactory;
-    protected $table = 'citraan';
+    protected $table = 'citraans';
     protected $fillable = [
         'lanskap',
         'data',
