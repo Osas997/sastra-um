@@ -11,7 +11,7 @@ class UpdateGayaBahasaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class UpdateGayaBahasaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'contoh_kalimat' => 'required|string|max:255',
+            'frasa_kunci' => 'required|string|max:255',
+            'frasa_tipe' => 'required|string|max:255',
+            'makna_kiasan' => 'required|string|max:255',
+            'keterangan_konteks' => 'nullable|string|max:255',
+            'kategori' => 'required|string|max:50',
         ];
     }
 }

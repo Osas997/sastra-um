@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\ApiResponse;
 use App\Http\Controllers\Controller;
 use App\Models\GayaBahasa;
 use App\Http\Requests\StoreGayaBahasaRequest;
@@ -14,7 +15,8 @@ class GayaBahasaController extends Controller
      */
     public function index()
     {
-        //
+        $gayaBahasa = GayaBahasa::paginate(10);
+        return ApiResponse::responseWithData($gayaBahasa, 'Success get all gaya bahasa', 200);
     }
 
 
@@ -24,7 +26,9 @@ class GayaBahasaController extends Controller
      */
     public function store(StoreGayaBahasaRequest $request)
     {
-        //
+        $data = $request->validated();
+        $gayaBahasa = GayaBahasa::create($data);
+        return ApiResponse::responseWithData($gayaBahasa, 'Success create gaya bahasa', 201);
     }
 
     /**
@@ -32,7 +36,11 @@ class GayaBahasaController extends Controller
      */
     public function show(GayaBahasa $gayaBahasa)
     {
-        //
+        $gayaBahasa = GayaBahasa::find($gayaBahasa->id);
+        if (!$gayaBahasa) {
+            return response()->json(['message' => 'Gaya bahasa tidak ditemukan'], 404);
+        }
+        return ApiResponse::responseWithData($gayaBahasa, 'Success get gaya bahasa', 200);
     }
 
     /**
@@ -40,7 +48,12 @@ class GayaBahasaController extends Controller
      */
     public function update(UpdateGayaBahasaRequest $request, GayaBahasa $gayaBahasa)
     {
-        //
+        $gayaBahasa = GayaBahasa::find($gayaBahasa->id);
+        if (!$gayaBahasa) {
+            return response()->json(['message' => 'Gaya bahasa tidak ditemukan'], 404);
+        }
+        $gayaBahasa->update($request->validated());
+        return ApiResponse::responseWithData($gayaBahasa, 'Success update gaya bahasa', 200);
     }
 
     /**
@@ -48,6 +61,11 @@ class GayaBahasaController extends Controller
      */
     public function destroy(GayaBahasa $gayaBahasa)
     {
-        //
+        $gayaBahasa = GayaBahasa::find($gayaBahasa->id);
+        if (!$gayaBahasa) {
+            return response()->json(['message' => 'Gaya bahasa tidak ditemukan'], 404);
+        }
+        $gayaBahasa->delete();
+        return ApiResponse::responseWithData(['message' => 'Gaya bahasa berhasil dihapus'], 200);
     }
 }

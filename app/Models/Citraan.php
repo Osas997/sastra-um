@@ -9,4 +9,13 @@ class Citraan extends Model
 {
     /** @use HasFactory<\Database\Factories\CitraanFactory> */
     use HasFactory;
+    protected $table = 'citraan';
+    protected $fillable = [
+        'lanskap',
+        'data',
+        'domain_sumber',
+        'domain_makna',
+        'konteks',
+        'kategori',
+    ];
 }

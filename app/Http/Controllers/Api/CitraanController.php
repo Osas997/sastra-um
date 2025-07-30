@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\ApiResponse;
 use App\Http\Controllers\Controller;
 use App\Models\Citraan;
 use App\Http\Requests\StoreCitraanRequest;
 use App\Http\Requests\UpdateCitraanRequest;
+
 
 class CitraanController extends Controller
 {
@@ -14,7 +16,8 @@ class CitraanController extends Controller
      */
     public function index()
     {
-        //
+       $citraan = Citraan::paginate(10);
+        return ApiResponse::responseWithData($citraan, 'Success get all citraan', 200);
     }
 
     /**
@@ -22,7 +25,10 @@ class CitraanController extends Controller
      */
     public function store(StoreCitraanRequest $request)
     {
-        //
+        $data = $request->validated();
+        $citraan = Citraan::create($data);
+
+        return ApiResponse::responseWithData($citraan, 'Success create citraan', 201);
     }
 
     /**
@@ -30,7 +36,11 @@ class CitraanController extends Controller
      */
     public function show(Citraan $citraan)
     {
-        //
+        $citraan = Citraan::find($citraan->id);
+        if (!$citraan) {
+            return response()->json(['message' => 'Citraan tidak ditemukan'], 404);
+        }
+        return ApiResponse::responseWithData($citraan, 'Success get citraan', 200);
     }
 
     /**
@@ -38,7 +48,12 @@ class CitraanController extends Controller
      */
     public function update(UpdateCitraanRequest $request, Citraan $citraan)
     {
-        //
+        $citraan = Citraan::find($citraan->id);
+        if (!$citraan) {
+            return response()->json(['message' => 'Citraan tidak ditemukan'], 404); 
+        }
+        $citraan->update($request->validated());
+        return ApiResponse::responseWithData($citraan, 'Success update citraan', 200);
     }
 
     /**
@@ -46,6 +61,11 @@ class CitraanController extends Controller
      */
     public function destroy(Citraan $citraan)
     {
-        //
+        $citraan = Citraan::find($citraan->id);
+        if (!$citraan) {
+            return response()->json(['message' => 'Citraan tidak ditemukan'], 404);
+        }
+        $citraan->delete();
+        return ApiResponse::responseWithData(['message' => 'Citraan berhasil dihapus.'], 200);
     }
 }
