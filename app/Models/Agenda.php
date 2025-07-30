@@ -16,5 +16,7 @@ class Agenda extends Model
         'waktu',
         'lokasi',
         'image',
+        'deskripsi',
+        'penyelenggara'
     ];
 }

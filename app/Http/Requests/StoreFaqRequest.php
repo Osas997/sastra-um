@@ -16,6 +16,9 @@ class StoreFaqRequest extends FormRequest
         return [
             'pertanyaan' => 'required|string|max:255|unique:faqs,pertanyaan',
             'jawaban' => 'required|string',
+            'kategori' => 'required|in:Akademik,Fasilitas,Fakultas,Dan lain lain',
+            'tanggal' => 'required|date',
+            'status' => 'required|in:draf,terunggah',
         ];
     }
 }

@@ -18,7 +18,9 @@ class StoreAgendaRequest extends FormRequest
             'tanggal' => 'required|date',
             'waktu'   => 'required|string|max:20',
             'lokasi'  => 'required|string|max:255',
-            'image'   => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'image'   => 'required|image|mimes:jpg,jpeg,png|max:2048',
+            'deskripsi' => 'required|string',
+            'penyelenggara' => 'required|string|max:255',
         ];
     }
 }

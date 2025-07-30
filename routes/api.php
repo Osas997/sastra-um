@@ -5,7 +5,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\FaqController;
 use App\Http\Controllers\API\SlideshowController;
-use App\Http\Controllers\Api\BeritaController;
 use App\Http\Controllers\Api\AgendaController;
 
 // login route
