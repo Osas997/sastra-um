@@ -11,7 +11,7 @@ class UpdateBeritaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class UpdateBeritaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'judul' => 'sometimes|required|min:3|max:255',
+            'isi' => 'sometimes|required',
+            'sumber' => 'sometimes|required|min:3|max:255',
+            'gambar' => 'sometimes|required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'status' => 'sometimes|in:draft,published',
         ];
     }
 }
