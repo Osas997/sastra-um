@@ -2,12 +2,12 @@
 
 use App\Helpers\ApiResponse;
 use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\BeritaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\FaqController;
 use App\Http\Controllers\API\SlideshowController;
 use App\Http\Controllers\Api\AgendaController;
+use App\Http\Controllers\Api\BeritaController;
 
 // login route
 Route::get('/user', function (Request $request) {
