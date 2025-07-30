@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('slideshows', function (Blueprint $table) {
-            $table->id();
-            $table->string('files')->nullable();
-            $table->string('headline')->nullable();
-            $table->text('deskripsi')->nullable();
-            $table->timestamps();
+        Schema::table('slideshows', function (Blueprint $table) {
+            $table->text('deskripsi')->after('headline');
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('slideshows');
+        Schema::table('slideshows', function (Blueprint $table) {
+            $table->dropColumn('deskripsi');
+        });
     }
 };

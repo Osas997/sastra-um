@@ -15,9 +15,9 @@ class UpdateSlideshowRequest extends FormRequest
     {
         return [
             'slides.*.id' => 'required|exists:slideshows,id',
-            'slides.*.headline' => 'nullable|string|max:255',
-            'slides.*.files' => 'nullable|file|mimes:jpg,jpeg,png|max:2048',
-
+            'slides.*.headline' => 'required|string|max:255',
+            'slides.*.files' => 'required|file|mimes:jpg,jpeg,png|max:2048',
+            'deskripsi' => 'required|string|max:1000',
         ];
     }
 

@@ -13,5 +13,6 @@ class Slideshow extends Model
     protected $fillable = [
         'files',
         'headline',
+        'deskripsi'
     ];
 }
