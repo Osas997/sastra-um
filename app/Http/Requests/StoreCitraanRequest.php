@@ -11,7 +11,7 @@ class StoreCitraanRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class StoreCitraanRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'lanskap' => 'required|string|max:255',
+            'data' => 'required|string',
+            'domain_sumber' => 'required|string|max:255',
+            'domain_makna' => 'required|string|max:255',
+            'konteks' => 'required|string|max:255',
+            'kategori' => 'required|in:visual,auditori,olfaktori,gustatori,taktil,kinestetik,organik',
         ];
     }
 }
