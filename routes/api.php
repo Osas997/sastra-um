@@ -50,4 +50,8 @@ Route::middleware(['auth:sanctum'])->prefix('cms')->group(function () {
 
     //admin agenda
     Route::apiResource('agenda', AgendaController::class);
+
+    //admin kamar data
+    Route::apiResource('citraan', CitraanController::class);
+    Route::apiResource('gaya_bahasa', GayaBahasaController::class);
 });
