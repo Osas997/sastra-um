@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('makna');
             $table->string('fungsi');
             $table->string('konteks');
-            $table->enum('kategori', ['nominal', 'verba', 'adjektiva', 'adverbia']);
+            $table->enum('kategori', ['nomina', 'verba', 'adjektiva', 'adverbia']);
             $table->timestamps();
         });
     }

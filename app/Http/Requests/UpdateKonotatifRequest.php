@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Enums\KonotatifKategori;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Enum;
 
 class UpdateKonotatifRequest extends FormRequest
 {
@@ -11,7 +13,7 @@ class UpdateKonotatifRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +23,28 @@ class UpdateKonotatifRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
+        $rules = [
+            'nomina' => 'sometimes|required',
+            'contoh_penggunaan' => 'sometimes|required',
+            'makna' => 'sometimes|required',
+            'kata_konotatif' => 'sometimes|required',
+            'fungsi' => 'sometimes|required',
+            'konteks' => 'sometimes|required',
+            'kategori' => ['sometimes', 'required', new Enum(KonotatifKategori::class)],
         ];
+
+        $categoryFields = [
+            KonotatifKategori::NOMINA->value => 'nomina2',
+            KonotatifKategori::VERBA->value => 'verba',
+            KonotatifKategori::ADJEKTIVA->value => 'adjektiva',
+            KonotatifKategori::ADVERBIA->value => 'adverbia',
+        ];
+
+        $kategori = $this->input('kategori');
+        if (isset($kategori) && isset($categoryFields[$kategori])) {
+            $rules[$categoryFields[$kategori]] = 'required';
+        }
+
+        return $rules;
     }
 }
