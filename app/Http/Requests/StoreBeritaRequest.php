@@ -22,7 +22,11 @@ class StoreBeritaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'judul' => 'required|min:3|max:255',
+            'isi' => 'required',
+            'sumber' => 'required|min:3|max:255',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'status' => 'in:draft,published',
         ];
     }
 }

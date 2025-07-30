@@ -29,7 +29,10 @@ Route::prefix('auth')->group(function () {
 });
 
 // Public Route
-Route::prefix('berita')->group(function () {});
+Route::prefix('berita')->group(function () {
+    Route::get('/', [BeritaController::class, 'publicIndex']);
+    Route::get('/{beritaId}', [BeritaController::class, 'publicShow']);
+});
 
 Route::prefix('agenda')->group(function () {});
 
