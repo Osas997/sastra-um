@@ -1,51 +1,97 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreSlideshowRequest;
 use App\Models\Slideshow;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use App\Http\Requests\UpdateSlideshowRequest;
+use Illuminate\Support\Facades\Log;
 
 class SlideshowController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+         $data = Slideshow::all();
+         return response()->json($data);
+    }
+
+    public function store(StoreSlideshowRequest $request)
+    {
+        $Slideshows = [];
+
+        foreach ($request->file('files', []) as $index => $file) {
+            $path = $file->store('Slideshows', 'public');
+            $headline = $request->headline[$index] ?? '';
+
+            $Slideshows[] = Slideshow::create([
+                'files' => "/storage/$path",
+                'headline' => $headline,
+            ]);
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Slideshows uploaded successfully',
+            'data' => $Slideshows
+        ]);
+    }
+    public function update(UpdateSlideshowRequest $request)
+    {
+        Log::info('STARTING SLIDE UPDATE');
+
+        foreach ($request->slides as $index => $slideData) {
+            Log::info("PROCESSING SLIDE INDEX $index", $slideData);
+
+            $slideshow = Slideshow::find($slideData['id']);
+            if (!$slideshow) {
+                Log::error("Slide dengan ID {$slideData['id']} tidak ditemukan");
+                continue;
+            }
+
+            if (isset($slideData['headline'])) {
+                $slideshow->headline = $slideData['headline'];
+            }
+
+            if (isset($slideData['files']) && $slideData['files'] instanceof \Illuminate\Http\UploadedFile) {
+                Log::info("Handling file upload for slide ID: {$slideData['id']}");
+
+                // Hapus file lama
+                if ($slideshow->files && Storage::disk('public')->exists($slideshow->files)) {
+                    Storage::disk('public')->delete($slideshow->files);
+                }
+
+                // Simpan file baru
+                $path = $slideData['files']->store('slides', 'public');
+                $slideshow->files = $path;
+            }
+
+            $slideshow->save();
+            Log::info("Slide {$slideData['id']} updated");
+        }
+
+        return response()->json([
+            'message' => 'Slides updated successfully.'
+        ]);
     }
 
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function destroy($id)
     {
-        //
-    }
+        $Slideshow = Slideshow::findOrFail($id);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Slideshow $slideshow)
-    {
-        //
-    }
+        if ($Slideshow->file) {
+            Storage::disk('public')->delete(str_replace('/storage/', '', $Slideshow->file));
+        }
 
+        $Slideshow->delete();
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Slideshow $slideshow)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Slideshow $slideshow)
-    {
-        //
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Slideshow deleted successfully',
+        ]);
     }
 }
