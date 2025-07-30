@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\ForceJsonResponse;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -15,9 +17,20 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->api(prepend: [
+            ForceJsonResponse::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
+        $exceptions->render(function (AuthenticationException $e, Request $request) {
+            if ($request->wantsJson() || $request->is('api/*')) {
+                return response()->json([
+                    'message' => 'Unauthenticated.',
+                    'error' => 'Authentication required to access this resource'
+                ], 401);
+            }
+        });
+
         $exceptions->render(function (ValidationException $e, Request $request) {
             if ($request->wantsJson() || $request->is('api/*')) {
                 return response()->json([

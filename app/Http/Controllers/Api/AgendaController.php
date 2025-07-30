@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class AgendaController extends Controller
 {
+    protected function responseWithData($data, $status = 200)
+    {
+        return response()->json(['data' => $data], $status);
+    }
+
     public function index(Request $request)
     {
         $query = Agenda::query();
@@ -18,7 +23,7 @@ class AgendaController extends Controller
             $query->where('judul', 'like', '%' . $request->search . '%');
         }
 
-        return response()->json($query->latest()->get());
+        return $this->responseWithData($query->latest()->get());
     }
 
     public function show($id)
@@ -29,7 +34,7 @@ class AgendaController extends Controller
             return response()->json(['message' => 'Agenda tidak ditemukan'], 404);
         }
 
-        return response()->json($agenda);
+        return $this->responseWithData($agenda);
     }
 
     public function store(StoreAgendaRequest $request)
@@ -37,7 +42,7 @@ class AgendaController extends Controller
         $data = $request->validated();
         $agenda = Agenda::create($data);
 
-        return response()->json($agenda, 201);
+        return $this->responseWithData($agenda, 201);
     }
 
     public function update(UpdateAgendaRequest $request, $id)
@@ -50,7 +55,7 @@ class AgendaController extends Controller
 
         $agenda->update($request->validated());
 
-        return response()->json($agenda);
+        return $this->responseWithData($agenda);
     }
 
     public function destroy($id)

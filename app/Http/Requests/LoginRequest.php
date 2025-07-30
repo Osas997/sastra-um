@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreBeritaRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,11 +22,8 @@ class StoreBeritaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'judul' => 'required|min:3|max:255',
-            'isi' => 'required',
-            'sumber' => 'required|min:3|max:255',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'status' => 'in:draft,published',
+            'username' => 'required|min:3',
+            'password' => 'required|min:3',
         ];
     }
 }

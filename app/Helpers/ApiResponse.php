@@ -14,8 +14,8 @@ class ApiResponse
       return response()->json(array_filter([
         'message' => $message,
         'data' => $responseData['data'],
-        'meta' => $responseData['meta'] ?? null,
-        'links' => $responseData['links'] ?? null,
+        'meta' => $responseData['meta'],
+        'links' => $responseData['links'],
       ], function ($value) {
         return !is_null($value);
       }), $code);
