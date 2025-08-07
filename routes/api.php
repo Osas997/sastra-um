@@ -8,6 +8,8 @@ use App\Http\Controllers\API\FaqController;
 use App\Http\Controllers\API\SlideshowController;
 use App\Http\Controllers\Api\AgendaController;
 use App\Http\Controllers\Api\BeritaController;
+use App\Http\Controllers\Api\CitraanController;
+use App\Http\Controllers\Api\GayaBahasaController;
 use App\Http\Controllers\Api\KonotatifController;
 
 // login route
@@ -42,7 +44,6 @@ Route::prefix('slideshow')->group(function () {});
 // CMS
 Route::middleware(['auth:sanctum'])->prefix('cms')->group(function () {
     Route::apiResource('berita', BeritaController::class);
-    Route::apiResource('konotatif', KonotatifController::class);
 
     //admin slideshow   
     Route::apiResource('slideshow', SlideshowController::class)->except(['show', 'update']);
@@ -55,6 +56,7 @@ Route::middleware(['auth:sanctum'])->prefix('cms')->group(function () {
     Route::apiResource('agenda', AgendaController::class);
 
     //admin kamar data
+    Route::apiResource('konotatif', KonotatifController::class);
     Route::apiResource('citraan', CitraanController::class);
     Route::apiResource('gaya_bahasa', GayaBahasaController::class);
 });
