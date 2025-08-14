@@ -1,2 +1,61 @@
 // Import all of Bootstrap’s CSS
 @import "bootstrap/scss/bootstrap";
+
+
+* {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.dot{
+    height: 6px;
+    width: 6px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+nav {
+    border-radius: 16px;
+}
+
+.contact-btn{
+    background-color: #F6F7F4;
+    border-radius: 8px;
+}
+
+.menu-btn{
+    background-color: black;
+    border-radius: 8px;
+    color: #F0F0F0;
+}
+
+#hero{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.input-sastra{
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(240, 240, 240, 1);
+    border-radius: 24px;
+    box-shadow: 0px 4px 30px 0px #00000014;
+    backdrop-filter: blur(5px)
+
+}
+
+.dropdown-toggle-lp::after {
+    display: none !important;
+}
+
+.dropdown-toggle-lp{
+    color: #BFBFBF;
+    background-color: #FFFFFF;
+}
+
+.search-kamar-btn{
+    background: linear-gradient(85.66deg, #FFBF00 -5.78%, #022512 66.73%);
+}
