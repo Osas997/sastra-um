@@ -7,3 +7,41 @@ Route::get('/', function () {
         'title' => 'Welcome'
     ]);
 });
+
+
+// Auth
+Route::prefix('auth')->group(function () {
+    // Route::post('/login', [AuthController::class, 'login']);
+
+    // Route::middleware(['auth:sanctum'])->group(function () {
+    //     Route::get('/me', [AuthController::class, 'me']);
+    //     Route::post('/logout', [AuthController::class, 'logout']);
+    // });
+});
+
+// Public Route
+
+
+// CMS
+Route::middleware('auth')->prefix('cms')->group(function () {
+    // Route::apiResource('berita', BeritaController::class);
+
+    //admin slideshow   
+    // Route::apiResource('slideshow', SlideshowController::class)->except(['show', 'update']);
+
+    //admin faq
+    // Route::apiResource('faq', FaqController::class);
+
+    // //admin agenda
+    // Route::apiResource('agenda', AgendaController::class);
+
+    // //admin kamar data
+    // Route::apiResource('konotatif', KonotatifController::class);
+    // Route::apiResource('citraan', CitraanController::class);
+    // Route::apiResource('gaya_bahasa', GayaBahasaController::class);
+
+    // Route::prefix('import')->group(function () {
+    //     Route::post('konotatif', [KonotatifController::class, 'import']);
+    //     Route::post('citraan', [CitraanController::class, 'import']);
+    // });
+});
