@@ -1,6 +1,8 @@
 <x-layouts.guest>
     <x-slot:title>{{ $title }}</x-slot:title>
-    <section id="hero" style="background-image: url('/assets/img/background.png');" class="pt-4 d-flex flex-column">
+
+    {{-- Hero --}}
+    <section id="hero" style="background-image: url('/assets/img/Artboard11.svg');" class="pt-4 d-flex flex-column">
         <nav class="navbar navbar-expand-lg bg-light mx-5 ">
             <div class="container-fluid justify-content-between">
                 <a class="navbar-brand" href="#">
@@ -29,49 +31,133 @@
                 </div>
             </div>
         </nav>
-
-    <div class="flex-grow-1 d-flex flex-column justify-content-center">
-            <div class="mx-5">
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <div class="d-inline-flex rounded-pill align-items-center border border-dark border-2 px-2">
-                            <div class="dot me-2"></div>
-                            <span>#ceritasegalarasa</span>
+        <div class="flex-grow-1 d-flex flex-column justify-content-center">
+                <div class="mx-5">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-inline-flex rounded-pill align-items-center border border-dark border-2 px-2">
+                                <div class="dot me-2"></div>
+                                <span>#ceritasegalarasa</span>
+                            </div>
+                            <h1 class="fw-bold mt-3" style="font-size: 64px;">
+                                Telusuri makna, imaji, dan gaya dalam setiap kata.
+                            </h1>
                         </div>
-                        <h1 class="fw-bold mt-3" style="font-size: 64px;">
-                            Telusuri makna, imaji, dan gaya dalam setiap kata.
-                        </h1>
+                        <div class="col-md-6 input-sastra p-5">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle dropdown-toggle-lp w-100 d-flex align-items-center justify-content-between border-none rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Pilih Jenis Kamar Data
+                                        <img src="{{ asset('assets/img/iconDropdown.svg')}}" alt="">
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown my-4">
+                                    <button class="btn btn-secondary dropdown-toggle dropdown-toggle-lp w-100 d-flex align-items-center justify-content-between border-none rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Pilih Kategori
+                                        <img src="{{ asset('assets/img/iconDropdown.svg')}}" alt="">
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </div>
+                                    <button type="submit" class="w-100 border-0 search-kamar-btn text-center fw-semibold text-light py-4 rounded-pill">
+                                        Telusuri sekarang
+                                    </button>
+                        </div>
                     </div>
-                    <div class="col-md-6 input-sastra -5">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle dropdown-toggle-lp w-100 d-flex align-items-center justify-content-between border-none rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Pilih Jenis Kamar Data
-                                    <img src="{{ asset('assets/img/iconDropdown.svg')}}" alt="">
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </div>
-                            <div class="dropdown my-4">
-                                <button class="btn btn-secondary dropdown-toggle dropdown-toggle-lp w-100 d-flex align-items-center justify-content-between border-none rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Pilih Kategori
-                                    <img src="{{ asset('assets/img/iconDropdown.svg')}}" alt="">
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </div>
-                                <button type="submit" class="w-100 border-0 search-kamar-btn text-center fw-semibold text-light py-4 rounded-pill">
-                                    Telusuri sekarang
-                                </button>
+                </div>
+        </div>
+        <div class="row g-3 mx-5">
+            <div class="col-md-4">
+                <div class="d-flex align-items-center">
+                    <div class="p-3 data-img-container me-3">
+                        <img src="{{ asset('assets/img/messages.svg') }}" alt="">
+                    </div>
+                    <span class="fw-semibold" style="font-size: 48px">166</span>
+                </div>
+                <h3 class="data-title mt-3 fw-semibold">Konotatif</h3>
+                <p class="data-desc">Temukan makna tersembunyi di balik setiap diksi konotatif yang menggetarkan rasa.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-center">
+                    <div class="p-3 data-img-container me-3">
+                        <img src="{{ asset('assets/img/eye.svg') }}" alt="">
+                    </div>
+                    <span class="fw-semibold" style="font-size: 48px">196</span>
+                </div>
+                <h3 class="data-title mt-3 fw-semibold">Citraan</h3>
+                <p class="data-desc">Urai setiap citraan yang memvisualkan perasaan dalam karya sastra.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-center">
+                    <div class="p-3 data-img-container me-3">
+                        <img src="{{ asset('assets/img/messages.svg') }}" alt="">
+                    </div>
+                    <span class="fw-semibold" style="font-size: 48px">201</span>
+                </div>
+                <h3 class="data-title mt-3 fw-semibold">Gaya Bahasa</h3>
+                <p class="data-desc">Telusuri majas dan gaya bahasa yang membentuk keindahan kekuatan narasi.</p>
+            </div>
+        </div>
+    </section>
+
+    {{-- Selanyang Pandang --}}
+    <section id="selayang-pandang" class="m-5">
+        <div class="selayang-pandang-container">
+            <div class="row g-3">
+                <div class="col-md-4 d-flex flex-column justify-content-between">
+                    <h4 class="fw-semibold">Selanyang Pandang</h4>
+                    <img src="{{ asset('assets/img/Thumnail.svg') }}" alt="" class="img-fluid w-50">
+                </div>
+                <div class="col-md-8">
+                    <p style="font-size: 32px">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </p>
+                        <div class="selayang-pandang-btn d-flex justify-content-between my-5 px-4 py-3" data-bs-toggle="modal" data-bs-target="#selayangModal">
+                            Lihat Detail
+                            <img src="{{ asset('assets/img/arrow-right.svg') }}" alt="">
+                        </div>
+                    <div class="selayang-pandang-name">
+                        <h4 class="fw-semibold p-0 m-0">Prof. Dr. Yuni Pratiwi, M.Pd.</h4>
+                        <p class="fw-normal p-0 m-0">Ketua Tim Peneliti Fakultas Sastra Universitas Negeri Malang</p>
+                        <p class="fw-lighter p-0 m-0">2022 - Sekarang</p>
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
+
+        {{-- Selayang Modal --}}
+        <div class="modal fade" id="selayangModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            <div class="modal-body">
+                <h2 class="fw-bold">Selayang Pandang</h2>
+                <div class="mt-3">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+                <img src="{{ asset('assets/img/selanyang.svg') }}" alt="" class="mt-4">
+                <div class="selayang-pandang-name mt-4">
+                        <h4 class="fw-semibold p-0 m-0">Prof. Dr. Yuni Pratiwi, M.Pd.</h4>
+                        <p class="fw-normal p-0 m-0">Ketua Tim Peneliti Fakultas Sastra Universitas Negeri Malang</p>
+                        <p class="fw-lighter p-0 m-0">2022 - Sekarang</p>
+                    </div>
+            </div>
+            </div>
+        </div>
+        </div>
     </section>
+
+
 
 </x-layouts.guest>
