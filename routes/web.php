@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,12 +13,8 @@ Route::get('/', function () {
 
 // Auth
 Route::prefix('auth')->group(function () {
-    // Route::post('/login', [AuthController::class, 'login']);
-
-    // Route::middleware(['auth:sanctum'])->group(function () {
-    //     Route::get('/me', [AuthController::class, 'me']);
-    //     Route::post('/logout', [AuthController::class, 'logout']);
-    // });
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 });
 
 // Public Route
@@ -24,7 +22,7 @@ Route::prefix('auth')->group(function () {
 
 // CMS
 Route::middleware('auth')->prefix('cms')->group(function () {
-    // Route::apiResource('berita', BeritaController::class);
+    Route::resource('berita', BeritaController::class);
 
     //admin slideshow   
     // Route::apiResource('slideshow', SlideshowController::class)->except(['show', 'update']);
