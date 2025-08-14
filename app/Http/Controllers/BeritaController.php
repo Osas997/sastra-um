@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBeritaRequest;
+use App\Http\Requests\UpdateBeritaRequest;
 use App\Models\Berita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class BeritaController extends Controller
 {
@@ -12,7 +16,7 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        //
+        $berita = Berita::latest()->paginate(10);
     }
 
     /**
@@ -26,9 +30,17 @@ class BeritaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreBeritaRequest $request)
     {
-        //
+        $beritaRequest = $request->validated();
+
+        $beritaRequest['slug'] = $this->generateSlug($beritaRequest['judul']);
+
+        $beritaRequest['gambar'] = $request->file('gambar')->storeAs('berita', uniqid() . '.' . $request->file('gambar')->extension(), 'public');
+
+        Berita::create($beritaRequest);
+
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil ditambahkan');
     }
 
     /**
@@ -50,9 +62,26 @@ class BeritaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Berita $berita)
+    public function update(UpdateBeritaRequest $request, Berita $berita)
     {
-        //
+        $beritaRequest = $request->validated();
+        dd($beritaRequest);
+
+        if (isset($beritaRequest['judul']) && $beritaRequest['judul'] != $berita->judul) {
+            $beritaRequest['slug'] = $this->generateSlug($beritaRequest['judul']);
+        }
+
+        if ($request->hasFile('gambar')) {
+            if ($berita->gambar) {
+                Storage::disk('public')->delete($berita->gambar);
+            }
+
+            $beritaRequest['gambar'] = $request->file('gambar')->storeAs('berita', uniqid() . '.' . $request->file('gambar')->extension(), 'public');
+        }
+
+        $berita->update($beritaRequest);
+
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil diupdate');
     }
 
     /**
@@ -60,6 +89,24 @@ class BeritaController extends Controller
      */
     public function destroy(Berita $berita)
     {
-        //
+        if ($berita->gambar) {
+            Storage::disk('public')->delete($berita->gambar);
+        }
+
+        $berita->delete();
+
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil dihapus');
+    }
+
+    public function generateSlug($title)
+    {
+        $slug = Str::slug($title);
+
+        $originalSlug = $slug;
+        while (Berita::where('slug', $slug)->exists()) {
+            $slug = $originalSlug . '-' . uniqid();
+        }
+
+        return $slug;
     }
 }

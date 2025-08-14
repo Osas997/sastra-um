@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\CustomErrorException;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,9 +14,7 @@ class AuthController extends Controller
         $credentials = $request->validated();
 
         if (!Auth::attempt($credentials)) {
-            return redirect()->back()->withErrors([
-                'username' => 'Invalid Username or Password',
-            ]);
+            throw new CustomErrorException('Invalid credentials');
         }
 
         return redirect()->intended(route('dashboard'));
