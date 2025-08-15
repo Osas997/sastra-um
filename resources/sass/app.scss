@@ -149,4 +149,42 @@ nav {
     font-weight: 500;
 }
 
+.narasi-btn{
+    background-color: rgba(236, 255, 206, 1);
+    color: rgba(2, 37, 18, 1);
+    border-radius: 18px;
+}
 
+.berita-title-item {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.text-truncate-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+    .berita-wrapper {
+        height: 100%; /* biar mengikuti container luar */
+    }
+    .berita-container {
+        height: 500px; /* tinggi tetap yang jadi acuan */
+    }
+
+    .berita-item {
+    flex: 0 0 auto; /* supaya tidak memaksa tumbuh */
+    height: 100px;  /* contoh tinggi tetap */
+    }
+
+    .author-text-item{
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 12px;
+        color: rgba(152, 162, 179, 1);
+    }

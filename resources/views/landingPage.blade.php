@@ -159,7 +159,7 @@
     </section>
 
     {{-- Tentang Kamar --}}
-    <section id="tentang-kamar" class=" m-5">
+    <section id="tentang-kamar" class="m-5">
         <div class="tentang-vid d-flex align-items-center justify-content-center position-relative" style="height: 500px;">
             <img src="{{ asset('assets/img/tentang-vid.jpg') }}"
                 alt=""
@@ -238,4 +238,86 @@
             </div>
         </div>
     </section>
+
+    {{-- Narasi --}}
+    <section id="narasi" class="mx-5 my-5">
+        <h1 class="fw-semibold">Narasi Kami, Cerita <br> Sastra</h1>
+        <div class="d-flex align-items-center justify-content-between">
+            <p>Dari ruang kampus hingga ruang baca Anda, kami berbagi cerita, ulasan, <br> dan refleksi yang merawat semangat sastra dan literasi Indonesia.</p>
+            <a href="" class="text-decoration-none">
+                <div class="d-flex align-items-center narasi-btn px-3 py-2">
+                    Selengkapnya
+                    <img src="{{ asset('assets/img/arrow-right.svg')}}" alt="" style="width:20px; height:20px;" class="ms-2">
+                </div>
+            </a>
+        </div>
+
+<div class="row mt-4 g-3 align-items-stretch berita-container ">
+    <!-- Kolom kiri -->
+    <div class="col-md-8 h-100">
+        <div class="w-100 h-100 position-relative">
+            <img src="{{ asset('assets/img/berita.png') }}"
+            alt=""
+            class="w-100 h-100 object-fit-cover border rounded position-absolute">
+            <div class="position-absolute bottom-0 start-0 p-4">
+                <h4 class="fw-semibold w-75 text-white">HMD Sastra Indonesia Sukses Gelar LENTERA 2025, cetak Maha...</h4>
+                <p class="m-0 p-0 author-text-item">16 Agustus, 2024</p>
+            </div>
+        </div>
+    </div>
+    <!-- Kanan -->
+    <div class="col-md-4 d-flex flex-column gap-3 h-100 berita-wrapper">
+        <!-- berita-item -->
+        <div class="berita-item d-flex flex-grow-1 align-items-center">
+            <div class="col-4 p-0 h-100">
+                <img src="{{ asset('assets/img/berita.png') }}"
+                    class="w-100 h-100 object-fit-cover border rounded">
+            </div>
+            <div class="col-8 ms-3 d-flex flex-column">
+                <h4 class=" berita-title-item text-truncate-3">
+                    Judul berit...
+                </h4>
+                    <p class="m-0 p-0 author-text-item">16 Agustus, 2024</p>
+            </div>
+        </div>
+        <div class="berita-item d-flex flex-grow-1 align-items-center">
+            <div class="col-4 p-0 h-100">
+                <img src="{{ asset('assets/img/berita.png') }}"
+                    class="w-100 h-100 object-fit-cover border rounded">
+            </div>
+            <div class="col-8 ms-3 d-flex flex-column">
+                <h4 class="berita-title-item text-truncate-3">
+                    Judul berita pertama pertamapertamapertamapertamapertama...
+                </h4>
+                <p class="m-0 p-0 author-text-item">16 Agustus, 2024</p>
+            </div>
+        </div>
+        <div class="berita-item d-flex flex-grow-1 align-items-center">
+            <div class="col-4 p-0 h-100">
+                <img src="{{ asset('assets/img/berita.png') }}"
+                    class="w-100 h-100 object-fit-cover border rounded">
+            </div>
+            <div class="col-8 ms-3 d-flex flex-column">
+                <h4 class="berita-title-item text-truncate-3">
+                    Judul berita pertama pertamapertamapertamapertamapertamapertamapertam apertamapertamapertama...
+                </h4>
+                    <p class="m-0 author-text-item">16 Agustus, 2024</p>
+            </div>
+        </div>
+        <div class="berita-item d-flex flex-grow-1 align-items-center">
+            <div class="col-4 p-0 h-100">
+                <img src="{{ asset('assets/img/berita.png') }}"
+                    class="w-100 h-100 object-fit-cover border rounded">
+            </div>
+            <div class="col-8 ms-3 d-flex flex-column">
+                <h4 class=" berita-title-item text-truncate-3">
+                    Judul berita pertama pertamapertamapertamapertamapertama...
+                </h4>
+                <p class="m-0 p-0 author-text-item">16 Agustus, 2024</p>
+            </div>
+        </div>
+        <!-- berita-item lain -->
+    </div>
+</div>
+</section>
 </x-layouts.guest>
