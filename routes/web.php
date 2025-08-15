@@ -21,8 +21,8 @@ Route::prefix('auth')->group(function () {
 
 
 // CMS
-Route::middleware('auth')->prefix('cms')->group(function () {
-    Route::resource('berita', BeritaController::class);
+Route::prefix('cms')->group(function () {
+    Route::resource('berita', BeritaController::class)->parameters(['berita' => 'berita']);
 
     //admin slideshow   
     // Route::apiResource('slideshow', SlideshowController::class)->except(['show', 'update']);
