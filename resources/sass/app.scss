@@ -78,3 +78,75 @@ nav {
     background-color: #ECFFCE;
     border-radius: 16px;
 }
+
+.vid-btn{
+    background: linear-gradient(85.66deg, #FFBF00 -5.78%, #022512 66.73%);
+    border-radius: 16px;
+    border: 10px solid rgba(255, 255, 255, 0.36);
+    background-clip: padding-box;
+}
+
+    .jenis-kamar-item {
+        height: 300px;
+        padding: 0; /* biar padding dari g-3 yang bekerja */
+        overflow: hidden; /* supaya gambar tidak keluar dari area card */
+        border-radius: 0.375rem; /* sama dengan .rounded */
+    }
+
+    .overlay-hover {
+        background: rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        display: flex; /* langsung flex dari awal */
+        flex-direction: column;
+    }
+
+    .jenis-kamar-item .overlay,
+    .jenis-kamar-item .position-absolute.bottom-0 {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .jenis-kamar-item:hover .overlay,
+    .jenis-kamar-item:hover .position-absolute.bottom-0 {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .jenis-kamar-item:hover .overlay-hover {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+
+    .jenis-kamar-item .jenis-item-bg,
+    .jenis-kamar-item .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: inherit; /* ikut border parent */
+        background: linear-gradient(185.12deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 96.24%);
+    }
+.jenis-kamar-item .overlay {
+    position: absolute;
+    inset: 0; /* top:0, right:0, bottom:0, left:0 */
+
+    pointer-events: none; /* biar overlay nggak ganggu klik */
+}
+
+.jenis-kamar-item span{
+    font-size: 32px;
+    font-weight: 500;
+}
+
+

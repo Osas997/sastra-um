@@ -158,6 +158,84 @@
         </div>
     </section>
 
+    {{-- Tentang Kamar --}}
+    <section id="tentang-kamar" class=" m-5">
+        <div class="tentang-vid d-flex align-items-center justify-content-center position-relative" style="height: 500px;">
+            <img src="{{ asset('assets/img/tentang-vid.jpg') }}"
+                alt=""
+                class="w-100 h-100 object-fit-cover object-position-center rounded">
+            <div class="vid-btn d-flex align-items-center justify-content-center position-absolute top-50 start-50 translate-middle p-3 fw-semibold text-white">
+                Tentang Kami
+                <img src="{{ asset('assets/img/video-circle.svg') }}" class="ms-2" alt="">
+            </div>
+        </div>
+        <div class="my-5">
+            <h1 class="fw-semibold">Kamar Data, Ruang <br> Eksplorasi Makna</h1>
+            <p>Kamar Data adalah ruang yang memungkinkan siapa saja untuk menyelami makna kata dari sisi sastra, yang disajikan lengkap dengan pemaknaan konotatif, citraan, dan gaya bahasa, agar bahasa tak hanya dipahami, tapi juga dialami.</p>
+        </div>
+        <div class="jenis-kamar-data">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <a href="" class="text-decoration-none">
+                        <div class="position-relative jenis-kamar-item">
+                            <img src="{{ asset('assets/img/konotatif.jpg') }}" alt="" class="jenis-item-bg">
 
+                            <div class="overlay"></div>
+                            <span class="position-absolute bottom-0 start-0 text-white p-3">Konotatif</span>
 
+                            <div class="overlay-hover position-absolute justify-content-end text-white p-3 h-100 flex-column hidden">
+                                <h3 class="mb-4">Mengungkap makna di luar makna leksikal</h3>
+                                <div class="d-flex align-items-center">
+                                    Telusuri
+                                    <img src="{{ asset('assets/img/arrow-right-white.svg')}}"
+                                        alt=""
+                                        style="width:20px; height:20px;" class="ms-2">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="" class="text-decoration-none">
+                        <div class="position-relative jenis-kamar-item">
+                            <img src="{{ asset('assets/img/citraan.jpg') }}" alt="" class="jenis-item-bg">
+
+                            <div class="overlay"></div>
+                            <span class="position-absolute bottom-0 start-0 text-white p-3">Citraan</span>
+
+                            <div class="overlay-hover position-absolute justify-content-end text-white p-3 h-100 flex-column hidden">
+                                <h3 class="mb-4">Menangkap unsur visual, auditif, hingga kinestetik</h3>
+                                <div class="d-flex align-items-center">
+                                    Telusuri
+                                    <img src="{{ asset('assets/img/arrow-right-white.svg')}}"
+                                        alt=""
+                                        style="width:20px; height:20px;" class="ms-2">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="" class="text-decoration-none">
+                        <div class="position-relative jenis-kamar-item">
+                            <img src="{{ asset('assets/img/gayaBahasa.jpg') }}" alt="" class="jenis-item-bg">
+
+                            <div class="overlay"></div>
+                            <span class="position-absolute bottom-0 start-0 text-white p-3">Gaya Bahasa</span>
+
+                            <div class="overlay-hover position-absolute justify-content-end text-white p-3 h-100 flex-column hidden">
+                                <h3 class="mb-4">Menampilkan bentuk retoris dan majas yang menyertainya.</h3>
+                                <div class="d-flex align-items-center">
+                                    Telusuri
+                                    <img src="{{ asset('assets/img/arrow-right-white.svg')}}"
+                                        alt=""
+                                        style="width:20px; height:20px;" class="ms-2">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </x-layouts.guest>
