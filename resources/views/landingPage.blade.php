@@ -3,34 +3,7 @@
 
     {{-- Hero --}}
     <section id="hero" style="background-image: url('/assets/img/Artboard11.svg');" class="pt-4 d-flex flex-column">
-        <nav class="navbar navbar-expand-lg bg-light mx-5 ">
-            <div class="container-fluid justify-content-between">
-                <a class="navbar-brand" href="#">
-                    <div class="d-flex">
-                        <img src="{{ asset('assets/img/Lambang-UM 1.svg') }}" alt="">
-                        <img src="{{ asset('assets/img/Logo Sastra.svg') }}" alt="" class="mx-3">
-                        <img src="{{ asset('assets/img/logo.svg') }}" alt="">
-                    </div>
-                </a>
-                {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup"> --}}
-                <div class="navbar-nav">
-                    <a href="" class="text-dark text-decoration-none">
-                        <div class="contact-btn d-flex align-items-center px-3 py-2">
-                            <img src="{{ asset('assets/img/whatsapp.svg')}}" alt="" class="me-2">
-                            <div class="fw-semibold">Contact Us</div>
-                        </div>
-                    </a>
-                        <div class="menu-btn d-flex align-items-center px-3 py-2 ms-3">
-                            <div class="fw-semibold">Menu</div>
-                            <img src="{{ asset('assets/img/menu.svg')}}" alt="" class="ms-2">
-                        </div>
-                </div>
-                </div>
-            </div>
-        </nav>
+        @include('components.navbar')
         <div class="flex-grow-1 d-flex flex-column justify-content-center">
                 <div class="mx-5">
                     <div class="row g-3">
@@ -397,6 +370,10 @@
             </div>
         </div>
 </section>
+
+{{-- Footer --}}
+@include('components.footer')
+
 
 <script>
     const slider = document.getElementById('slider-redaksi');
