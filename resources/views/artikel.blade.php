@@ -4,9 +4,9 @@
         @include('components.navbar')
 
         <div class="m-5 d-flex">
-            <div class="narsi-btn" data-index="1">Artike</div>
-            <div class="narsi-btn mx-5" data-index="2">Berita</div>
-            <div class="narsi-btn" data-index="3">Agenda</div>
+            <button class="narsi-btn" data-index="1">Artike</button>
+            <button class="narsi-btn mx-5" data-index="2">Berita</button>
+            <button class="narsi-btn" data-index="3">Agenda</button>
         </div>
 
         <div class="mx-4 my-5 narasi-konten">
