@@ -217,7 +217,7 @@
         <h1 class="fw-semibold">Narasi Kami, Cerita <br> Sastra</h1>
         <div class="d-flex align-items-center justify-content-between">
             <p>Dari ruang kampus hingga ruang baca Anda, kami berbagi cerita, ulasan, <br> dan refleksi yang merawat semangat sastra dan literasi Indonesia.</p>
-            <a href="" class="text-decoration-none">
+            <a href="/artikel-berita-agenda" class="text-decoration-none">
                 <div class="d-flex align-items-center narasi-btn px-3 py-2">
                     Selengkapnya
                     <img src="{{ asset('assets/img/arrow-right.svg')}}" alt="" style="width:20px; height:20px;" class="ms-2">

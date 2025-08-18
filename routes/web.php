@@ -7,3 +7,14 @@ Route::get('/', function () {
         'title' => 'Sastra UM'
     ]);
 });
+
+Route::get('/artikel-berita-agenda', function () {
+    return view('artikel', [
+        'title' => 'Sastra UM | Artikel'
+    ]);
+});
+Route::get('/artikel-berita-agenda/detail', function () {
+    return view('artikel-detail', [
+        'title' => 'Sastra UM | Artikel'
+    ]);
+});
