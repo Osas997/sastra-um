@@ -316,8 +316,49 @@
                 <p class="m-0 p-0 author-text-item">16 Agustus, 2024</p>
             </div>
         </div>
-        <!-- berita-item lain -->
     </div>
 </div>
+</section>
+
+{{-- FAQ --}}
+<section id="faq" class="my-5 p-5 ">
+    <div class="">
+        <h4 class="fw-semibold">Isu yang Sering Ditanya</h4>
+        <div class="mt-5">
+            <div class="border-bottom pb-4 mb-4 row justify-content-between align-items-center d-flex">
+                <div class="col-md-3 fw-semibold">
+                    (01)
+                </div>
+                <div class="col-md-6">
+                    <h4 class="fw-semibold">Apa itu Rumah Data Sastra?</h4>
+                </div>
+                <div class="col-md-3 align-items-center justify-content-end d-flex">
+                    <img src="{{ asset('assets/img/add-circle.svg')}}" alt="">
+                </div>
+            </div>
+            <div class="border-bottom pb-4 mb-4 row justify-content-between align-items-center d-flex">
+                <div class="col-md-3 fw-semibold">
+                    (02)
+                </div>
+                <div class="col-md-6">
+                    <h4 class="fw-semibold">Apakah data di Kamar Data bisa digunakan untuk penelitian?</h4>
+                </div>
+                <div class="col-md-3 align-items-center justify-content-end d-flex">
+                    <img src="{{ asset('assets/img/add-circle.svg')}}" alt="">
+                </div>
+            </div>
+            <div class="border-bottom pb-4 mb-4 row justify-content-between align-items-center d-flex">
+                <div class="col-md-3 fw-semibold">
+                    (03)
+                </div>
+                <div class="col-md-6">
+                    <h4 class="fw-semibold">Apakah saya bisa mengusulkan kata baru untuk dianalisis?</h4>
+                </div>
+                <div class="col-md-3 align-items-center justify-content-end d-flex">
+                    <img src="{{ asset('assets/img/add-circle.svg')}}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 </x-layouts.guest>
