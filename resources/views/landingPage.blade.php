@@ -321,7 +321,7 @@
 </section>
 
 {{-- FAQ --}}
-<section id="faq" class="my-5 p-5 ">
+<section id="faq" class="my-5 p-5">
     <div class="">
         <h4 class="fw-semibold">Isu yang Sering Ditanya</h4>
         <div class="mt-5">
@@ -361,4 +361,57 @@
         </div>
     </div>
 </section>
+
+{{-- Suara Redaksi --}}
+<section class="my-5" id="redaksi">
+        <div class="px-5">
+            <h4 class="fw-semibold">Suara Dari Redaksi</h4>
+             <div class="slider-buttons d-flex justify-content-end">
+                    <button class="slide-btn-left" onclick="slideLeft()">
+                        <img src="{{ asset('assets/img/arrow-left.svg') }}" alt="">
+                    </button>
+                    <button class="slide-btn-right" onclick="slideRight()">
+                        <img src="{{ asset('assets/img/arrow-right.svg') }}" alt="">
+                    </button>
+            </div>
+        </div>
+        <div class="mt-3">
+            <div class="slider-redaksi-wrapper">
+            <div class="slider-redaksi" id="slider-redaksi">
+                <div class="slide-track-redaksi">
+                @for ($i = 0; $i < 100; $i++)
+                <div class="slide-redaksi border p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="{{ asset('assets/img/redaksi-profile.png') }}" alt="" width="48" height="48" class="object-fit-cover rounded">
+                        <div class="ms-2">
+                            <h6  class="fw-semibold p-0 m-0 redaksi-title">Yoyok</h6>
+                            <P class="p-0 m-0 redaksi-job">Art Director</P>
+                        </div>
+                    </div>
+                    <p class="redaksi-desc">
+                        “Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua“
+                    </p>
+                </div>
+                @endfor
+                </div>
+            </div>
+        </div>
+</section>
+
+<script>
+    const slider = document.getElementById('slider-redaksi');
+
+    function slideLeft() {
+        console.log("Scroll kiri");
+        slider.scrollBy({ left: -220, behavior: 'smooth' });
+    }
+
+    function slideRight() {
+        console.log("Scroll kanan");
+        slider.scrollBy({ left: 220, behavior: 'smooth' });
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+</script>
 </x-layouts.guest>

@@ -192,3 +192,87 @@ nav {
     #faq {
         background-color: rgba(248, 248, 248, 1);
     }
+
+.slider-redaksi-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+
+.slider-redaksi {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.slider-redaksi::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}
+
+.slide-track-redaksi {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.slider-buttons {
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.slide-btn-right {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(236, 255, 206, 1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-btn-left {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(248, 248, 250, 1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slide-redaksi{
+    width: 400px;
+    flex-shrink: 0;
+    border-radius: 20px;
+}
+
+.redaksi-job{
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(166, 166, 166, 1);
+}
+.redaksi-title{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.redaksi-desc{
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(166, 166, 166, 1);
+}
