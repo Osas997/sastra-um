@@ -18,3 +18,8 @@ Route::get('/artikel-berita-agenda/detail', function () {
         'title' => 'Sastra UM | Artikel'
     ]);
 });
+Route::get('/tentang-kami', function () {
+    return view('tentang-kami', [
+        'title' => 'Sastra UM | Tentang Kami'
+    ]);
+});

@@ -18,8 +18,9 @@
 
 nav {
     border-radius: 16px;
-    box-shadow: -99px 0px 99px 0px rgba(0, 0, 0, 0.09);
-    box-shadow: -223px 0px 134px 0px rgba(0, 231, 85, 0.05);
+    box-shadow:
+        -99px 0px 99px 0px rgba(0, 0, 0, 0.09),
+        -223px 0px 134px 0px rgba(0, 231, 85, 0.05);
 }
 
 .contact-btn{
@@ -377,4 +378,18 @@ footer{
 
 #narasi{
     background-color: rgba(248, 248, 248, 1);
+}
+
+.biodata-redaksi-btn{
+    background-color: rgba(236, 255, 206, 1);
+    border-radius: 10px;
+}
+
+.detail-title{
+    color: rgba(24, 40, 86, 1);
+    font-weight: 600;
+}
+
+#detailTimRedaksiModal ul li{
+    color: rgba(8, 14, 30, 1);
 }

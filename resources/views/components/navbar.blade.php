@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-light mx-5 ">
             <div class="container-fluid justify-content-between">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <div class="d-flex">
                         <img src="{{ asset('assets/img/Lambang-UM 1.svg') }}" alt="">
                         <img src="{{ asset('assets/img/Logo Sastra.svg') }}" alt="" class="mx-3">

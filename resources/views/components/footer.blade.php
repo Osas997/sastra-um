@@ -3,9 +3,9 @@
         <div class="row p-5 g-5">
             <div class="col-md-5">
                 <div class="d-flex justify-content-between mb-5">
-                    <a href="#tentang-kamar" class="text-decoration-none footer-nav">Kamar Data</a>
-                    <a href="#narasi" class="text-decoration-none footer-nav">Cerita & Narasi</a>
-                    <a href="#redaksi" class="text-decoration-none footer-nav">Tim Redaksi</a>
+                    <a href="/#tentang-kamar" class="text-decoration-none footer-nav">Kamar Data</a>
+                    <a href="/#narasi" class="text-decoration-none footer-nav">Cerita & Narasi</a>
+                    <a href="/#redaksi" class="text-decoration-none footer-nav">Tim Redaksi</a>
                 </div>
                 <div class="row">
                     <div class="col-md-4 footer-title">Alamat</div>
@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="col-md-7">
-                <a class="text-decoration-none text-white footer-btn px-2 py-1">
+                <a class="text-decoration-none text-white footer-btn px-2 py-1" href="/tentang-kami">
                     Informasi Lainya
                 </a>
                 <div class="footer-email mt-5 pb-3 border-bottom">
