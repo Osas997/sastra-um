@@ -40,10 +40,10 @@
                 </div>
             </div>
         </div>
-        <div class="px-5 py-3 d-flex justify-content-between align-items-center" style="background-color: rgba(15, 15, 20, 1);">
-            <div class="text-white">Term of Use</div>
-            <div class="text-white">©<span id="year"></span> Copyrights sastraum</div>
-            <div class="text-white">Privacy Policy</div>
-        </div>
+    </div>
+    <div class="px-5 py-3 d-flex justify-content-between align-items-center" style="background-color: rgba(15, 15, 20, 1);">
+        <div class="text-white">Term of Use</div>
+        <div class="text-white">©<span id="year"></span> Copyrights sastraum</div>
+        <div class="text-white">Privacy Policy</div>
     </div>
 </footer>

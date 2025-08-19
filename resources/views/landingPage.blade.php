@@ -149,7 +149,7 @@
         <div class="jenis-kamar-data">
             <div class="row g-3">
                 <div class="col-md-4">
-                    <a href="" class="text-decoration-none">
+                    <a href="/kamar-data?index=1" class="text-decoration-none">
                         <div class="position-relative jenis-kamar-item">
                             <img src="{{ asset('assets/img/konotatif.jpg') }}" alt="" class="jenis-item-bg">
 
@@ -169,7 +169,7 @@
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="" class="text-decoration-none">
+                    <a href="/kamar-data?index=2" class="text-decoration-none">
                         <div class="position-relative jenis-kamar-item">
                             <img src="{{ asset('assets/img/citraan.jpg') }}" alt="" class="jenis-item-bg">
 
@@ -189,7 +189,7 @@
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="" class="text-decoration-none">
+                    <a href="/kamar-data?index=3" class="text-decoration-none">
                         <div class="position-relative jenis-kamar-item">
                             <img src="{{ asset('assets/img/gayaBahasa.jpg') }}" alt="" class="jenis-item-bg">
 

@@ -23,3 +23,10 @@ Route::get('/tentang-kami', function () {
         'title' => 'Sastra UM | Tentang Kami'
     ]);
 });
+
+Route::get('/kamar-data', function () {
+        return view('kamar-data', [
+            'title' => 'Sastra UM | Kamar Data'
+        ]);
+});
+
