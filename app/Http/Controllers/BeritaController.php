@@ -65,7 +65,6 @@ class BeritaController extends Controller
     public function update(UpdateBeritaRequest $request, Berita $berita)
     {
         $beritaRequest = $request->validated();
-        dd($beritaRequest);
 
         if (isset($beritaRequest['judul']) && $beritaRequest['judul'] != $berita->judul) {
             $beritaRequest['slug'] = $this->generateSlug($beritaRequest['judul']);
