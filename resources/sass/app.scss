@@ -1,2 +1,486 @@
 // Import all of Bootstrap’s CSS
 @import "bootstrap/scss/bootstrap";
+
+
+* {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.dot{
+    height: 6px;
+    width: 6px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+nav {
+    border-radius: 16px;
+    box-shadow:
+        -99px 0px 99px 0px rgba(0, 0, 0, 0.09),
+        -223px 0px 134px 0px rgba(0, 231, 85, 0.05);
+}
+
+.contact-btn{
+    background-color: #F6F7F4;
+    border-radius: 8px;
+}
+
+.menu-btn{
+    background-color: black;
+    border-radius: 8px;
+    color: #F0F0F0;
+    cursor: pointer;
+}
+
+#hero{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.input-sastra{
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(240, 240, 240, 1);
+    border-radius: 24px;
+    box-shadow: 0px 4px 30px 0px #00000014;
+    backdrop-filter: blur(5px)
+
+}
+
+.dropdown-toggle-lp::after {
+    display: none !important;
+}
+.dropdown-toggle-kamar-data::after {
+    display: none !important;
+}
+
+.dropdown-toggle-lp{
+    color: #BFBFBF;
+    background-color: #FFFFFF;
+}
+
+.dropdown-toggle-kamar-data{
+    color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(236, 255, 206, 1);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.search-kamar-btn{
+    background: linear-gradient(85.66deg, #FFBF00 -5.78%, #022512 66.73%);
+}
+
+.data-img-container{
+    background-color: #ECFFCE;
+    border-radius: 16px;
+}
+
+.data-title{
+    color: #696C71;
+    font-size: 22px;
+}
+.data-desc{
+    color: #696C71;
+    font-size: 14px;
+}
+
+.selayang-pandang-btn{
+    background-color: #ECFFCE;
+    border-radius: 16px;
+}
+
+.vid-btn{
+    background: linear-gradient(85.66deg, #FFBF00 -5.78%, #022512 66.73%);
+    border-radius: 16px;
+    border: 10px solid rgba(255, 255, 255, 0.36);
+    background-clip: padding-box;
+    cursor: pointer;
+}
+
+    .jenis-kamar-item {
+        height: 300px;
+        padding: 0; /* biar padding dari g-3 yang bekerja */
+        overflow: hidden; /* supaya gambar tidak keluar dari area card */
+        border-radius: 0.375rem; /* sama dengan .rounded */
+    }
+
+    .overlay-hover {
+        background: rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        display: flex; /* langsung flex dari awal */
+        flex-direction: column;
+    }
+
+    .jenis-kamar-item .overlay,
+    .jenis-kamar-item .position-absolute.bottom-0 {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .jenis-kamar-item:hover .overlay,
+    .jenis-kamar-item:hover .position-absolute.bottom-0 {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .jenis-kamar-item:hover .overlay-hover {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+
+    .jenis-kamar-item .jenis-item-bg,
+    .jenis-kamar-item .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: inherit; /* ikut border parent */
+        background: linear-gradient(185.12deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 96.24%);
+    }
+.jenis-kamar-item .overlay {
+    position: absolute;
+    inset: 0; /* top:0, right:0, bottom:0, left:0 */
+
+    pointer-events: none; /* biar overlay nggak ganggu klik */
+}
+
+.jenis-kamar-item span{
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.narasi-btn{
+    background-color: rgba(236, 255, 206, 1);
+    color: rgba(2, 37, 18, 1);
+    border-radius: 18px;
+}
+
+.berita-title-item {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.text-truncate-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+    .berita-wrapper {
+        height: 100%; /* biar mengikuti container luar */
+    }
+    .berita-container {
+        height: 500px; /* tinggi tetap yang jadi acuan */
+    }
+
+    .berita-item {
+    flex: 0 0 auto; /* supaya tidak memaksa tumbuh */
+    height: 100px;  /* contoh tinggi tetap */
+    }
+
+    .author-text-item{
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 12px;
+        color: rgba(152, 162, 179, 1);
+    }
+
+    #faq {
+        background-color: rgba(248, 248, 248, 1);
+    }
+
+.slider-redaksi-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+
+.slider-redaksi {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.slider-redaksi::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}
+
+.slide-track-redaksi {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.slider-buttons {
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.slide-btn-right {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(236, 255, 206, 1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-btn-left {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(248, 248, 250, 1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slide-redaksi{
+    width: 400px;
+    flex-shrink: 0;
+    border-radius: 20px;
+}
+
+.redaksi-job{
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(166, 166, 166, 1);
+}
+.redaksi-title{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.redaksi-desc{
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(166, 166, 166, 1);
+}
+
+footer{
+    background-color: rgba(0, 0, 0, 1);
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.footer-nav{
+    font-size: 20px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.footer-title {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+}
+
+.footer-desc{
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.footer-btn {
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.footer-email{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 56px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-sosmed{
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.nav-pop-up {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    padding-top: 120px;
+    justify-content: start;
+    align-items: start;
+    background-color: rgba(255, 255, 255, 0.8);
+    flex-direction: column;
+    z-index: 11000;
+
+    /* trik transisi */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-200px);   /* geser sedikit ke atas */
+    transition: all 0.5s ease;
+}
+.nav-pop-up-container{
+    background-color: black;
+    border-radius: 16px;
+}
+
+.nav-pop-up.show {
+    display: flex;       /* tetap flex */
+    visibility: visible; /* kelihatan */
+    opacity: 1;
+    transform: translateY(0); /* balik normal (slide turun) */
+}
+
+.narsi-btn{
+    color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(102, 112, 133, 0.2);
+    width: 140px;
+    height: 56px;
+    border-radius: 8px;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.narsi-btn.active{
+    background-color: rgba(0, 0, 0, 1);
+    color: rgba(240, 240, 240, 1);
+}
+
+#narasi{
+    background-color: rgba(248, 248, 248, 1);
+}
+
+.biodata-redaksi-btn{
+    background-color: rgba(236, 255, 206, 1);
+    border-radius: 10px;
+}
+
+.detail-title{
+    color: rgba(24, 40, 86, 1);
+    font-weight: 600;
+}
+
+#detailTimRedaksiModal ul li{
+    color: rgba(8, 14, 30, 1);
+}
+
+.kamar-data-kembali-btn{
+    background-color: rgba(246, 247, 244, 1);
+    color: rgba(2, 37, 18, 1);
+    border-radius: 16px;
+}
+
+.kamar-data-thead th:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.kamar-data-thead th:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.dropdown-menu-km {
+    width: 100%;
+    min-width: unset;
+}
+
+.dropdown-menu-lp {
+    width: 100%;
+    min-width: unset;
+}
+
+.dropdown-item-km{
+    box-shadow: 0px 4px 28px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    transition: .3s;
+}
+.dropdown-item-km:hover{
+    background-color: #696C71;
+}
+
+.dropdown-item-lp{
+    box-shadow: 0px 4px 28px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    transition: .3s;
+}
+.dropdown-item-lp:hover{
+    background-color: #696C71;
+}
+
+.toggle-close{
+        float: right;
+        margin-left: -25px;
+        margin-top: -40px;
+        right: 10px;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        display: none;
+}
+
+
+input:focus + .toggle-close {
+    display: inline;
+}
+.search-kamar-data:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.form-floating {
+    border: 1px solid #FFCF00;
+    border-radius: 30px;
+}
+
+    .toggle-icon{
+        float: left;
+        margin-right: -40px;
+        margin-top: -37px;
+        left: 30px;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+    }

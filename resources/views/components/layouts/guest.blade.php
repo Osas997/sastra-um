@@ -9,19 +9,17 @@
 
   <title>{{ $title }}</title>
 
-  @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-  {{-- plugin --}}
-  @stack('plugin')
-
-  {{-- custom style --}}
-  @stack('style')
+ @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
 </head>
 
 <body>
   {{ $slot }}
-
-  @stack('script')
+  
+  
+  <script src="https://kit.fontawesome.com/13d9e0f562.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
