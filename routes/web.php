@@ -2,11 +2,19 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\KonotatifController;
+use App\Http\Controllers\SlideshowController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('landingPage', [
         'title' => 'Sastra UM'
+    ]);
+});
+
+Route::get('/slideshow', function () {
+    return view('slideshow', [
+        'title' => 'Slideshow'
     ]);
 });
 
@@ -48,7 +56,8 @@ Route::prefix('cms')->group(function () {
     Route::resource('berita', BeritaController::class)->parameters(['berita' => 'berita']);
 
     //admin slideshow   
-    // Route::apiResource('slideshow', SlideshowController::class)->except(['show', 'update']);
+    Route::get('slideshow/current', [SlideshowController::class, 'index']);
+    Route::apiResource('slideshow', SlideshowController::class)->except(['update', 'edit', 'show']);
 
     //admin faq
     // Route::apiResource('faq', FaqController::class);
@@ -57,7 +66,7 @@ Route::prefix('cms')->group(function () {
     // Route::apiResource('agenda', AgendaController::class);
 
     // //admin kamar data
-    // Route::apiResource('konotatif', KonotatifController::class);
+    Route::apiResource('konotatif', KonotatifController::class);
     // Route::apiResource('citraan', CitraanController::class);
     // Route::apiResource('gaya_bahasa', GayaBahasaController::class);
 
