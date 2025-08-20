@@ -20,6 +20,13 @@ class AuthController extends Controller
         return redirect()->intended(route('dashboard'));
     }
 
+    public function showLoginForm()
+    {
+        return view('auth.login', [
+            'title' => 'Login'
+        ]);
+    }
+
     public function logout(Request $request)
     {
         Auth::logout();

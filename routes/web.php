@@ -44,6 +44,7 @@ Route::get('/kamar-data', function () {
 
 // Auth
 Route::prefix('auth')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
     Route::post('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 });
@@ -54,7 +55,7 @@ Route::prefix('auth')->group(function () {
 // CMS
 Route::prefix('cms')->group(function () {
     Route::resource('berita', BeritaController::class)->parameters(['berita' => 'berita']);
-
+  
     //admin slideshow   
     Route::get('slideshow/current', [SlideshowController::class, 'index']);
     Route::apiResource('slideshow', SlideshowController::class)->except(['update', 'edit', 'show']);
