@@ -98,6 +98,7 @@ nav {
     border-radius: 16px;
     border: 10px solid rgba(255, 255, 255, 0.36);
     background-clip: padding-box;
+    cursor: pointer;
 }
 
     .jenis-kamar-item {
@@ -425,12 +426,26 @@ footer{
     min-width: unset;
 }
 
+.dropdown-menu-lp {
+    width: 100%;
+    min-width: unset;
+}
+
 .dropdown-item-km{
     box-shadow: 0px 4px 28px 0px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
     transition: .3s;
 }
 .dropdown-item-km:hover{
+    background-color: #696C71;
+}
+
+.dropdown-item-lp{
+    box-shadow: 0px 4px 28px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    transition: .3s;
+}
+.dropdown-item-lp:hover{
     background-color: #696C71;
 }
 
@@ -454,3 +469,18 @@ input:focus + .toggle-close {
     outline: none !important;
     box-shadow: none !important;
 }
+
+.form-floating {
+    border: 1px solid #FFCF00;
+    border-radius: 30px;
+}
+
+    .toggle-icon{
+        float: left;
+        margin-right: -40px;
+        margin-top: -37px;
+        left: 30px;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+    }

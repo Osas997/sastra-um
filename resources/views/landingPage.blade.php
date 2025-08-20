@@ -22,10 +22,10 @@
                                         Pilih Jenis Kamar Data
                                         <img src="{{ asset('assets/img/iconDropdown.svg')}}" alt="">
                                     </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <ul class="dropdown-menu dropdown-menu-lp px-3">
+                                        <li><a class="dropdown-item dropdown-item-lp p-3 mb-3" href="#">Action</a></li>
+                                        <li><a class="dropdown-item dropdown-item-lp p-3 mb-3" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item dropdown-item-lp p-3 mb-3" href="#">Something else here</a></li>
                                     </ul>
                                 </div>
                                 <div class="dropdown my-4">
@@ -33,10 +33,10 @@
                                         Pilih Kategori
                                         <img src="{{ asset('assets/img/iconDropdown.svg')}}" alt="">
                                     </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <ul class="dropdown-menu dropdown-menu-lp px-3">
+                                        <li><a class="dropdown-item dropdown-item-lp p-3 mb-3" href="#">Action</a></li>
+                                        <li><a class="dropdown-item dropdown-item-lp p-3 mb-3" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item dropdown-item-lp p-3 mb-3" href="#">Something else here</a></li>
                                     </ul>
                                 </div>
                                     <button type="submit" class="w-100 border-0 search-kamar-btn text-center fw-semibold text-light py-4 rounded-pill">
@@ -137,7 +137,7 @@
             <img src="{{ asset('assets/img/tentang-vid.jpg') }}"
                 alt=""
                 class="w-100 h-100 object-fit-cover object-position-center rounded">
-            <div class="vid-btn d-flex align-items-center justify-content-center position-absolute top-50 start-50 translate-middle p-3 fw-semibold text-white">
+            <div class="vid-btn d-flex align-items-center justify-content-center position-absolute top-50 start-50 translate-middle p-3 fw-semibold text-white" data-bs-toggle="modal" data-bs-target="#galleryModal">
                 Tentang Kami
                 <img src="{{ asset('assets/img/video-circle.svg') }}" class="ms-2" alt="">
             </div>
@@ -370,6 +370,23 @@
             </div>
         </div>
 </section>
+
+{{-- Modal Video --}}
+<div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body p-0">
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.youtube.com/embed/vjCOM6Tz26A"
+                  title="YouTube video"
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 {{-- Footer --}}
 @include('components.footer')

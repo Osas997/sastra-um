@@ -14,6 +14,7 @@
 
 <body>
   {{ $slot }}
+  <script src="https://kit.fontawesome.com/13d9e0f562.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
