@@ -13,6 +13,7 @@ Route::get('/', function () {
 
 // Auth
 Route::prefix('auth')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
     Route::post('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 });
@@ -24,7 +25,7 @@ Route::prefix('auth')->group(function () {
 Route::prefix('cms')->group(function () {
     Route::resource('berita', BeritaController::class)->parameters(['berita' => 'berita']);
 
-    //admin slideshow   
+    //admin slideshow
     // Route::apiResource('slideshow', SlideshowController::class)->except(['show', 'update']);
 
     //admin faq
